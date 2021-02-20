@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 :root {
-    --focus-color: #1a53b6;
+    /* --focus-color: #1a53b6; */
+    --focus-color: #3498db;
     --success-color: #2ecc71;
     --error-color: #e74c3c; 
     --color-button: #3498db;
+    --hover-button: #2284c5;
 }
 
 * {
@@ -32,6 +34,12 @@ body {
 
 .form {
     padding: 30px 40px;
+}
+
+.form h2 {
+    text-align: center;
+    margin-top: 0;
+    font-weight: 500;
 }
 
 .form-section {
@@ -66,16 +74,19 @@ body {
 }
 
 .form-section small {
-    color: var(--error-color);
     
     position: absolute;
     left: 0;
     bottom: 0;
-
+    
     visibility: hidden;
 }
-
 .form-section.error small {             /* .error activated with JS*/
+    color: var(--error-color);
+    visibility: visible;
+}
+.form-section.success small {             /* .success activated with JS*/
+    color: #15ad55;
     visibility: visible;
 }
 
@@ -91,4 +102,9 @@ body {
     font-size: 16px;
     display: block;
 
+    transition: all 0.5s ease;
+}
+.form .button:hover {
+    background: var(--hover-button);
+    border-color: var(--hover-button);
 }
